@@ -1,0 +1,39 @@
+doctype 5
+html(lang="en")
+  include includes/head
+  body
+    include includes/nav
+    section.contactMsgs
+      header.header
+        .h1Headers
+          h1 Contact
+          h1 Phone
+        .h2Headers
+          h2= contact.name
+          h2= contact.phone
+
+      table.messages
+        tr
+          th(scope="col") Title
+          th(scope="col") Message
+        tr
+          td
+          td
+        for msgs in contact.messages
+          tr
+            td= msgs.title
+            td= msgs.msg
+            td
+              input.schd.btn.btn-info.btn-mini(type="button", value="Schedule", onclick="")
+
+      form.addMsg#addMsg(method="POST", action="/contact/" + contact._id + "/addMsg")
+        .control-group.title
+          label.control-label.titleName(for="title") Title
+          .controls
+            input#title(type="text", name="title")
+        .control-group.msg
+          label.control-label.msgArea(for="msg") Enter Message
+          .controls
+            textarea(rows="4", cols="50", name="msg")
+        input#addMsg.btn.btn-primary.btn-mini(type="submit", value="Add New Message")
+        a.goSchd(href="/contact/" + contact._id + "/schedule") Schedule Messages

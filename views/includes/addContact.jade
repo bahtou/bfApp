@@ -1,0 +1,13 @@
+.row
+  .span12
+    .span5.app#app
+      form.enterContact(action="/addContact", method="post")
+        .control-group.name
+          label.control-label.cName(for="contactName") Contact
+          .controls
+            input#contactName(type="text", name="contactName", placeholder="enter gf name")
+        .control-group.phone
+          label.control-label.cPhone(for="contactPhone") Phone #
+          .controls
+            input#contactPhone(type="text", name="contactPhone", placeholder="1-5468692145")
+        input#submit.btn.btn-primary(type="submit", value="Add Contact")
