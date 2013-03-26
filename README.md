@@ -5,6 +5,7 @@ Send periodically pre/custom Programmed text messages to your girl friend to let
 ##Tools
 * [twilio](http://www.twilio.com/sms)
 * [Node.js](http://nodejs.org/)
+* [Mongo](http://www.mongodb.org/)
 
 ##Models
 * Contacts
